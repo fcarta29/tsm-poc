@@ -1,0 +1,541 @@
+apiVersion: v1
+items:
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"networking.istio.io/v1alpha3","kind":"VirtualService","metadata":{"annotations":{},"name":"acme","namespace":"default"},"spec":{"gateways":["acme-gateway"],"hosts":["*"],"http":[{"match":[{"uri":{"prefix":"/"}}],"route":[{"destination":{"host":"shopping","port":{"number":3000}}}]}]}}
+    creationTimestamp: "2021-02-17T18:57:40Z"
+    generation: 1
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:gateways: {}
+          f:hosts: {}
+          f:http: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2021-02-17T18:57:40Z"
+    name: acme
+    namespace: default
+    resourceVersion: "3445695"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/acme
+    uid: 6897369e-0f05-4b21-af4a-593852b765d7
+  spec:
+    gateways:
+    - acme-gateway
+    hosts:
+    - '*'
+    http:
+    - match:
+      - uri:
+          prefix: /
+      route:
+      - destination:
+          host: shopping
+          port:
+            number: 3000
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:57Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:57Z"
+    name: nsxsm.gns.acme-charter-gns.cart
+    namespace: default
+    resourceVersion: "3450175"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.cart
+    uid: 559a40fb-0ba0-4f6c-92a3-8e43085f2863
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - cart.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: cart.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:58Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:58Z"
+    name: nsxsm.gns.acme-charter-gns.cart-redis
+    namespace: default
+    resourceVersion: "3450184"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.cart-redis
+    uid: 537dd93f-3917-42ce-afe6-b63551e16b8c
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - cart-redis.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: cart-redis.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:57Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:57Z"
+    name: nsxsm.gns.acme-charter-gns.catalog
+    namespace: default
+    resourceVersion: "3450174"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.catalog
+    uid: 60a6fa5c-203a-439a-805e-f3facd7d46f2
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - catalog.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: catalog.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:56Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:56Z"
+    name: nsxsm.gns.acme-charter-gns.catalog-mongo
+    namespace: default
+    resourceVersion: "3450173"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.catalog-mongo
+    uid: ea90215c-5981-4154-8970-ec9f179df86b
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - catalog-mongo.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: catalog-mongo.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T20:06:59Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T20:06:59Z"
+    name: nsxsm.gns.acme-charter-gns.catalog-mongo-v2
+    namespace: default
+    resourceVersion: "3459698"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.catalog-mongo-v2
+    uid: 9435753a-5f33-406f-9ebc-aa13a1083955
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - catalog-mongo-v2.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: catalog-mongo-v2.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:59Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:59Z"
+    name: nsxsm.gns.acme-charter-gns.kubernetes
+    namespace: default
+    resourceVersion: "3450189"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.kubernetes
+    uid: d316f2ab-7ac1-4eb1-b3ca-f0ce8f7a3ae0
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - kubernetes.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: kubernetes.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:59Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:59Z"
+    name: nsxsm.gns.acme-charter-gns.order
+    namespace: default
+    resourceVersion: "3450188"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.order
+    uid: f686f04d-5468-4e18-a44d-7be9885b3040
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - order.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: order.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:58Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:58Z"
+    name: nsxsm.gns.acme-charter-gns.order-mongo
+    namespace: default
+    resourceVersion: "3450187"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.order-mongo
+    uid: 93d1b99f-f3ce-4b86-811d-08da02300819
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - order-mongo.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: order-mongo.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:58Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:58Z"
+    name: nsxsm.gns.acme-charter-gns.payment
+    namespace: default
+    resourceVersion: "3450185"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.payment
+    uid: 938ddcf8-3d72-4d40-8be5-5a7a8c84d10a
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - payment.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: payment.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:58Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:58Z"
+    name: nsxsm.gns.acme-charter-gns.shopping
+    namespace: default
+    resourceVersion: "3450186"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.shopping
+    uid: f25f5d39-a035-48b8-9d6d-a0565554af6f
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - shopping.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: shopping.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:57Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:57Z"
+    name: nsxsm.gns.acme-charter-gns.users
+    namespace: default
+    resourceVersion: "3450180"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.users
+    uid: 161c5591-7e5c-4718-8d9f-9c5368cdb620
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - users.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: users.charterealab.local
+- apiVersion: networking.istio.io/v1beta1
+  kind: VirtualService
+  metadata:
+    creationTimestamp: "2021-02-17T19:18:58Z"
+    generation: 1
+    labels:
+      createdby: allspark
+    managedFields:
+    - apiVersion: networking.istio.io/v1alpha3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:createdby: {}
+        f:spec:
+          .: {}
+          f:exportTo: {}
+          f:hosts: {}
+          f:http: {}
+      manager: k8s-cluster-manager
+      operation: Update
+      time: "2021-02-17T19:18:58Z"
+    name: nsxsm.gns.acme-charter-gns.users-mongo
+    namespace: default
+    resourceVersion: "3450183"
+    selfLink: /apis/networking.istio.io/v1beta1/namespaces/default/virtualservices/nsxsm.gns.acme-charter-gns.users-mongo
+    uid: ff256e1c-3855-4946-83f4-11d9213f702d
+  spec:
+    exportTo:
+    - .
+    hosts:
+    - users-mongo.charterealab.local
+    http:
+    - headers:
+        request:
+          add:
+            x-allspark-request-header: tsm-poc01
+      route:
+      - destination:
+          host: users-mongo.charterealab.local
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

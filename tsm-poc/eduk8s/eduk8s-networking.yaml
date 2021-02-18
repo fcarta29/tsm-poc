@@ -1,0 +1,89 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: eduk8s-gateway
+  namespace: eduk8s
+spec:
+  selector:
+    istio: ingressgateway # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - '*.training.tsm.poc.frankcarta.com'
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: eduk8s-portal
+  namespace: lab-k8s-fundamentals-ui
+spec:
+  hosts:
+  - lab-k8s-fundamentals-ui.training.tsm.poc.frankcarta.com
+  gateways:
+  - eduk8s/eduk8s-gateway
+  http:
+  - route:
+    - destination:
+        host: eduk8s-portal.lab-k8s-fundamentals-ui.svc.cluster.local
+        port:
+          number: 8080
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: lab-k8s-fundamentals-w01-s001
+  namespace: lab-k8s-fundamentals-w01
+spec:
+  hosts:
+  - lab-k8s-fundamentals-w01-s001.training.tsm.poc.frankcarta.com
+  - lab-k8s-fundamentals-w01-s001-console.training.tsm.poc.frankcarta.com
+  - lab-k8s-fundamentals-w01-s001-editor.training.tsm.poc.frankcarta.com
+  gateways:
+  - eduk8s/eduk8s-gateway
+  http:
+  - route:
+    - destination:
+        host: lab-k8s-fundamentals-w01-s001.lab-k8s-fundamentals-w01.svc.cluster.local
+        port:
+          number: 10080
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: lab-k8s-fundamentals-w01-s002
+  namespace: lab-k8s-fundamentals-w01
+spec:
+  hosts:
+  - lab-k8s-fundamentals-w01-s002.training.tsm.poc.frankcarta.com
+  - lab-k8s-fundamentals-w01-s002-console.training.tsm.poc.frankcarta.com
+  - lab-k8s-fundamentals-w01-s002-editor.training.tsm.poc.frankcarta.com
+  gateways:
+  - eduk8s/eduk8s-gateway
+  http:
+  - route:
+    - destination:
+        host: lab-k8s-fundamentals-w01-s002.lab-k8s-fundamentals-w01.svc.cluster.local
+        port:
+          number: 10080
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: lab-k8s-fundamentals-w01-s003
+  namespace: lab-k8s-fundamentals-w01
+spec:
+  hosts:
+  - lab-k8s-fundamentals-w01-s003.training.tsm.poc.frankcarta.com
+  - lab-k8s-fundamentals-w01-s003-console.training.tsm.poc.frankcarta.com
+  - lab-k8s-fundamentals-w01-s003-editor.training.tsm.poc.frankcarta.com
+  gateways:
+  - eduk8s/eduk8s-gateway
+  http:
+  - route:
+    - destination:
+        host: lab-k8s-fundamentals-w01-s003.lab-k8s-fundamentals-w01.svc.cluster.local
+        port:
+          number: 10080

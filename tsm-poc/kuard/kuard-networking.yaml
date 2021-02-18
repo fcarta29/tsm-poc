@@ -1,0 +1,35 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: kuard-gateway
+  namespace: kuard
+  labels:
+    app: kuard  
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - kuard.tsm.poc.frankcarta.com
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: kuard
+  namespace: kuard
+  labels:
+    app: kuard  
+spec:
+  hosts:
+  - kuard.tsm.poc.frankcarta.com
+  gateways:
+  - kuard/kuard-gateway
+  http:
+  - name: kuard
+    route:
+    - destination:
+        host: kuard

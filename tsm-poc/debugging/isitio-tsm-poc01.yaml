@@ -1,0 +1,6 @@
+NAME                   TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)                                         AGE     SELECTOR
+istio-egressgateway    ClusterIP      10.100.200.26    <none>        80/TCP,443/TCP                                  3h58m   app=istio-egressgateway,istio=egressgateway
+istio-ingressgateway   LoadBalancer   10.100.200.139   172.16.1.7    15021:30815/TCP,80:30947/TCP,443:32212/TCP      3h58m   app=istio-ingressgateway,istio=ingressgateway
+istio-telemetry        ClusterIP      10.100.200.3     <none>        9091/TCP,15004/TCP,15014/TCP,42422/TCP          3h58m   istio-mixer-type=telemetry,istio=mixer
+istiocoredns           ClusterIP      10.100.200.164   <none>        53/UDP,53/TCP                                   3h58m   app=istiocoredns
+istiod                 ClusterIP      10.100.200.65    <none>        15010/TCP,15012/TCP,443/TCP,15014/TCP,853/TCP   3h59m   app=istiod,istio=pilot
