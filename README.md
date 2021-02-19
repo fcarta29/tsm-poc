@@ -5,7 +5,7 @@
 ### Version information
 **On prem (tsm-poc01, tsm-poc02)**
 * TKGi 1.9.0 (K8s 1.18.8)
-* Avi 20.1.1.1 patch 2p2
+* Avi 20.1.1.1 patch 2p2 / AKO 1.3.1
 * NSX-T 3.0.2
 
 **TKG - AWS (tsm-poc03)**
