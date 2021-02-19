@@ -23,3 +23,5 @@
 hs_err_pid*
 config/kube.conf
 tsm-poc/debugging
+
+*.excalidraw

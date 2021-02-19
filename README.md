@@ -14,4 +14,4 @@
 * Calico
 * 
 ### Environment Overview
-![](https://i.imgur.com/zAsxoow.png)
+![TSM POC Overview](./docs/images/TSM-POC-Env-Overview.png)
